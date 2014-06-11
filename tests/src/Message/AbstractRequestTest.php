@@ -70,7 +70,7 @@ class AbstractRequestTest extends TestCase
 
     public function providerGetData()
     {
-        $tmx = $this->getMock('Omnipay\Emp\Threatmatrix', ['getSessionId'], ['sID', 'orgID']);
+        $tmx = $this->getMock('Omnipay\Emp\Threatmatrix', array('getSessionId', array('sID', 'orgID'));
         $tmx
             ->expects($this->once())
             ->method('getSessionId')
