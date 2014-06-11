@@ -1,5 +1,5 @@
 Omnipay: EMP
-===========
+============
 
 **eMerchantPay driver for the Omnipay PHP payment processing library**
 
