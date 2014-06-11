@@ -12,11 +12,17 @@ use Omnipay\Common\Message\RequestInterface;
  */
 class PurchaseResponse extends AbstractResponse
 {
+    /**
+     * @return boolean
+     */
     public function isSuccessful()
     {
         return ($this->getTransactionResponse() === 'A' and ! $this->getErrors());
     }
 
+    /**
+     * @return array|null
+     */
     public function getErrors()
     {
         if (isset($this->data['errors']['error'])) {
@@ -26,6 +32,9 @@ class PurchaseResponse extends AbstractResponse
         }
     }
 
+    /**
+     * @return string|null
+     */
     public function getErrorMessage()
     {
         $errors = $this->getErrors();
@@ -37,6 +46,9 @@ class PurchaseResponse extends AbstractResponse
         }
     }
 
+    /**
+     * @return string|null
+     */
     public function getTransactionId()
     {
         if (isset($this->data['transaction']['trans_id'])) {
@@ -44,6 +56,9 @@ class PurchaseResponse extends AbstractResponse
         }
     }
 
+    /**
+     * @return string|null
+     */
     public function getTransactionReference()
     {
         if (isset($this->data['order_id'])) {
@@ -51,6 +66,9 @@ class PurchaseResponse extends AbstractResponse
         }
     }
 
+    /**
+     * @return string|null
+     */
     public function getTransactionResponse()
     {
         if (isset($this->data['transaction']['response'])) {
@@ -58,6 +76,9 @@ class PurchaseResponse extends AbstractResponse
         }
     }
 
+    /**
+     * @return string|null
+     */
     public function getCode()
     {
         $errors = $this->getErrors();
@@ -71,6 +92,9 @@ class PurchaseResponse extends AbstractResponse
         }
     }
 
+    /**
+     * @return string|null
+     */
     public function getMessage()
     {
         if ($this->getErrors()) {

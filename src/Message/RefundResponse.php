@@ -12,11 +12,17 @@ use Omnipay\Common\Message\RequestInterface;
  */
 class RefundResponse extends AbstractResponse
 {
+    /**
+     * @return boolean
+     */
     public function isSuccessful()
     {
         return ($this->getResponse() === 'A');
     }
 
+    /**
+     * @return string|null
+     */
     public function getTransactionId()
     {
         if (isset($this->data['trans_id'])) {
@@ -24,6 +30,9 @@ class RefundResponse extends AbstractResponse
         }
     }
 
+    /**
+     * @return string|null
+     */
     public function getResponse()
     {
         if (isset($this->data['response'])) {
@@ -31,6 +40,9 @@ class RefundResponse extends AbstractResponse
         }
     }
 
+    /**
+     * @return string|null
+     */
     public function getCode()
     {
         if (isset($this->data['responsecode'])) {
@@ -38,6 +50,9 @@ class RefundResponse extends AbstractResponse
         }
     }
 
+    /**
+     * @return string|null
+     */
     public function getMessage()
     {
         if (isset($this->data['responsetext'])) {

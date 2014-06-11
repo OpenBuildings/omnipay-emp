@@ -9,11 +9,18 @@ namespace Omnipay\Emp\Message;
  */
 class PurchaseRequest extends AbstractRequest
 {
+    /**
+     * @return string
+     */
     public function getEndpoint()
     {
         return 'https://my.emerchantpay.com/service/order/submit';
     }
 
+    /**
+     * @param  mixed $data
+     * @return \Omnipay\Emp\Message\PurchaseResponse
+     */
     public function sendData($data)
     {
         $responseData = parent::sendData($data);
@@ -23,6 +30,9 @@ class PurchaseRequest extends AbstractRequest
         return $this->response;
     }
 
+    /**
+     * @return array
+     */
     public function getData()
     {
         $data = parent::getData();

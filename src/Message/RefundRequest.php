@@ -9,11 +9,18 @@ namespace Omnipay\Emp\Message;
  */
 class RefundRequest extends AbstractRequest
 {
+    /**
+     * @return string
+     */
     public function getEndpoint()
     {
         return 'https://my.emerchantpay.com/service/order/credit';
     }
 
+    /**
+     * @param  mixed $data
+     * @return \Omnipay\Emp\Message\RefundResponse
+     */
     public function sendData($data)
     {
         $responseData = parent::sendData($data);
@@ -23,6 +30,9 @@ class RefundRequest extends AbstractRequest
         return $this->response;
     }
 
+    /**
+     * @return array
+     */
     public function getData()
     {
         $data = parent::getData();

@@ -9,10 +9,25 @@ namespace Omnipay\Emp;
  */
 class Threatmatrix
 {
+    /**
+     * @var string
+     */
     private $organizationId;
+
+    /**
+     * @var string
+     */
     private $sessionId;
+
+    /**
+     * @var string
+     */
     private $session;
 
+    /**
+     * @param string $organizationId
+     * @param string $clientId
+     */
     public function __construct($organizationId, $clientId)
     {
         $this->organizationId = $organizationId;
@@ -20,21 +35,33 @@ class Threatmatrix
         $this->session = md5(rand());
     }
 
+    /**
+     * @return string
+     */
     public function getOrganizationId()
     {
         return $this->organizationId;
     }
 
+    /**
+     * @return string
+     */
     public function getSessionId()
     {
         return $this->sessionId;
     }
 
+    /**
+     * @return string
+     */
     public function getSession()
     {
         return $this->session;
     }
 
+    /**
+     * @return string
+     */
     public function getUrlQuery()
     {
         return http_build_query(array(
@@ -45,6 +72,7 @@ class Threatmatrix
 
     /**
      * Return the tracking code, that has to be placed to the page where the payment form is
+     *
      * @return string
      */
     public function getTrackingCode()
@@ -63,6 +91,9 @@ class Threatmatrix
 TRACKING;
     }
 
+    /**
+     * @return string
+     */
     public function getTrackingUrl()
     {
         $urlQuery = $this->getUrlQuery();
