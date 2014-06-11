@@ -21,7 +21,7 @@ class AbstractRequestTest extends TestCase
     {
         $this->request = $this->getMockForAbstractClass(
             'Omnipay\Emp\Message\AbstractRequest',
-            [$this->getHttpClient(), $this->getHttpRequest()]
+            array($this->getHttpClient(), $this->getHttpRequest())
         );
 
         $this->request->initialize();
