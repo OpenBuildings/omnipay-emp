@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Date: Wed, 11 Jun 2014 18:23:36 GMT
+Content-Length: 211
+Content-Type: text/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<failure><errors><error><code>OP858</code><text>customer_email is required</text></error><error><code>OP828</code><text>invalid ipaddress</text></error></errors></failure>

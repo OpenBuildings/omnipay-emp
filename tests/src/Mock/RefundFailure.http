@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Date: Wed, 11 Jun 2014 19:32:39 GMT
+Content-Length: 158
+Content-Type: text/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<credit><responsetext>Invalid order_id</responsetext><responsecode>OP299</responsecode><response>E</response></credit>

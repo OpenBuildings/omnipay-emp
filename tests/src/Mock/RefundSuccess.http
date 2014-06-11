@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Date: Wed, 11 Jun 2014 19:37:57 GMT
+Content-Length: 184
+Content-Type: text/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<credit><response>A</response><responsecode>OP000</responsecode><responsetext>ApproveTEST</responsetext><trans_id>1413976984</trans_id></credit>

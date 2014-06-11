@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Date: Wed, 11 Jun 2014 18:09:24 GMT
+Content-Length: 1086
+Content-Type: text/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<order><order_id>51697014</order_id><order_total>10.00</order_total><test_transaction>1</test_transaction><order_datetime>2014-06-11 18:09:24</order_datetime><order_status>Paid</order_status><cart><item><id>51931344</id><code>10</code><name>Product 1 Desc</name><description></description><qty>2</qty><digital>0</digital><discount>0</discount><predefined>0</predefined><unit_price>5.00</unit_price></item><item><id>51931354</id><code>12</code><name>Shipping for Product 1</name><description></description><qty>1</qty><digital>0</digital><discount>0</discount><predefined>0</predefined><unit_price>5.00</unit_price></item><item><id>51931364</id><code>12</code><name>Promotion</name><description></description><qty>1</qty><digital>0</digital><discount>1</discount><predefined>0</predefined><unit_price>-5.00</unit_price></item></cart><transaction><type>sale</type><response>A</response><response_code>OP000</response_code><response_text>ApproveTEST</response_text><trans_id>1413907284</trans_id><account_id>635182</account_id></transaction></order>
