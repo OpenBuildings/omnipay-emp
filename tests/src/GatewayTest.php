@@ -73,16 +73,7 @@ class GatewayTest extends GatewayTestCase
         );
 
         $this->refundOptions = array(
-            'items' => array(
-                array(
-                    'name' => '51945994',
-                    'price' => '10.00',
-                ),
-                array(
-                    'name' => '51946004',
-                    'price' => '5.00',
-                )
-            ),
+            'amount' => '20.00',
             'description' => 'Faulty Product',
             'transactionReference' => '51711614',
             'transactionId' => '1413980404',

@@ -18,6 +18,39 @@ class RefundRequest extends AbstractRequest
     }
 
     /**
+     * @return array
+     */
+    public function getRequestData()
+    {
+        return $this->getParameter('requestData');
+    }
+
+    /**
+     * @param array $value
+     */
+    public function setRequestData(array $value)
+    {
+        return $this->setParameter('requestData', $value);
+    }
+
+    public function getRequestDataItem($code)
+    {
+        $data = $this->getRequestData();
+
+        if (isset($data['cart']['item'])) {
+            $items = $data['cart']['item'];
+
+            foreach ($items as $item) {
+                if (isset($item['code']) and $item['code'] == $code) {
+                    return $item['id'];
+                }
+            }
+        }
+
+        return $code;
+    }
+
+    /**
      * @param  mixed $data
      * @return \Omnipay\Emp\Message\RefundResponse
      */
@@ -42,11 +75,13 @@ class RefundRequest extends AbstractRequest
         $items = $this->getItems();
 
         if ($items) {
+            $this->validate('requestData');
+
             foreach ($items as $index => $item) {
 
                 $i = $index + 1;
 
-                $data["item_{$i}_id"] = $item->getName();
+                $data["item_{$i}_id"] = $this->getRequestDataItem($item->getName());
                 $data["item_{$i}_amount"] = $item->getPrice();
             }
         } else {
