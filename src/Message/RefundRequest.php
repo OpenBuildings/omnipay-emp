@@ -33,6 +33,10 @@ class RefundRequest extends AbstractRequest
         return $this->setParameter('requestData', $value);
     }
 
+    /**
+     * @param  string $code
+     * @return string
+     */
     public function getRequestDataItem($code)
     {
         $data = $this->getRequestData();

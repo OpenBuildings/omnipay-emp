@@ -163,7 +163,7 @@ class RefundRequestTest extends TestCase
     }
 
     /**
-     * @covers getRequestDataItem
+     * @covers ::getRequestDataItem
      */
     public function testGetRequestDataItem()
     {
