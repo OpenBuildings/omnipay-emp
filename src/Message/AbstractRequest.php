@@ -2,7 +2,7 @@
 
 namespace Omnipay\Emp\Message;
 
-use Omnipay\Emp\Threatmatrix;
+use Omnipay\Emp\Threatmetrix;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -65,19 +65,19 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     }
 
     /**
-     * @return Threatmatrix
+     * @return Threatmetrix
      */
-    public function getThreatmatrix()
+    public function getThreatmetrix()
     {
-        return $this->getParameter('threatmatrix');
+        return $this->getParameter('threatmetrix');
     }
 
     /**
-     * @param Threatmatrix $value
+     * @param Threatmetrix $value
      */
-    public function setThreatmatrix(Threatmatrix $value)
+    public function setThreatmetrix(Threatmetrix $value)
     {
-        return $this->setParameter('threatmatrix', $value);
+        return $this->setParameter('threatmetrix', $value);
     }
 
     /**
@@ -93,8 +93,8 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             $data['test_transaction'] = '1';
         }
 
-        if ($this->getThreatmatrix()) {
-            $data['thm_session_id'] = $this->getThreatmatrix()->getSessionId();
+        if ($this->getThreatmetrix()) {
+            $data['thm_session_id'] = $this->getThreatmetrix()->getSessionId();
         }
 
         $data['client_id'] = $this->getClientId();

@@ -3,16 +3,16 @@
 namespace Omnipay\Emp\Test;
 
 use Omnipay\Tests\TestCase;
-use Omnipay\Emp\Threatmatrix;
+use Omnipay\Emp\Threatmetrix;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  *
- * @coversDefaultClass Omnipay\Emp\Threatmatrix
+ * @coversDefaultClass Omnipay\Emp\Threatmetrix
  */
-class ThreatmatrixTest extends TestCase
+class ThreatmetrixTest extends TestCase
 {
     /**
      * @covers ::__construct
@@ -22,7 +22,7 @@ class ThreatmatrixTest extends TestCase
      */
     public function testConstruct()
     {
-        $tmx = new Threatmatrix('myorg1', 'client-id-2');
+        $tmx = new Threatmetrix('myorg1', 'client-id-2');
         $this->assertEquals('myorg1', $tmx->getOrganizationId());
         $this->assertContains('client-id-2', $tmx->getSessionId());
         $this->assertNotNull($tmx->getSession());
@@ -33,7 +33,7 @@ class ThreatmatrixTest extends TestCase
      */
     public function testGetUrlQuery()
     {
-        $tmx = new Threatmatrix('myorg3', 'client-id-4');
+        $tmx = new Threatmetrix('myorg3', 'client-id-4');
 
         $params = array();
         parse_str($tmx->getUrlQuery(), $params);
@@ -47,7 +47,7 @@ class ThreatmatrixTest extends TestCase
      */
     public function testGetTrackingUrl()
     {
-        $instance = new Threatmatrix('myorg3', 'client-id-4');
+        $instance = new Threatmetrix('myorg3', 'client-id-4');
 
         $url = $instance->getTrackingUrl();
 
@@ -59,7 +59,7 @@ class ThreatmatrixTest extends TestCase
      */
     public function testGetTrackingCode()
     {
-        $instance = new Threatmatrix('myorg3', 'client-id-4');
+        $instance = new Threatmetrix('myorg3', 'client-id-4');
 
         $code = $instance->getTrackingCode();
 

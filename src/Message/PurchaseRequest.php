@@ -78,8 +78,8 @@ class PurchaseRequest extends AbstractRequest
             $data["item_{$i}_unit_price_{$currency}"] = $item->getPrice();
         }
 
-        if ($this->getThreatmatrix()) {
-            $data['thm_session_id'] = $this->getThreatmatrix()->getSessionId();
+        if ($this->getThreatmetrix()) {
+            $data['thm_session_id'] = $this->getThreatmetrix()->getSessionId();
         }
 
         return $data;
