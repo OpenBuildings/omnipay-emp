@@ -51,8 +51,8 @@ class PurchaseResponse extends AbstractResponse
      */
     public function getTransactionId()
     {
-        if (isset($this->data['transaction']['trans_id'])) {
-            return $this->data['transaction']['trans_id'];
+        if (isset($this->data['order_id'])) {
+            return $this->data['order_id'];
         }
     }
 
@@ -61,8 +61,8 @@ class PurchaseResponse extends AbstractResponse
      */
     public function getTransactionReference()
     {
-        if (isset($this->data['order_id'])) {
-            return $this->data['order_id'];
+        if (isset($this->data['transaction']['trans_id'])) {
+            return $this->data['transaction']['trans_id'];
         }
     }
 

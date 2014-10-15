@@ -59,23 +59,23 @@ class RefundResponseTest extends TestCase
     }
 
     /**
-     * @covers ::getTransactionId
+     * @covers ::getTransactionReference
      */
-    public function testGetTransactionIdSuccess()
+    public function testGetTransactionReferenceSuccess()
     {
         $response = new RefundResponse($this->request, $this->dataSuccess);
 
-        $this->assertEquals('1413976984', $response->getTransactionId());
+        $this->assertEquals('1413976984', $response->getTransactionReference());
     }
 
     /**
-     * @covers ::getTransactionId
+     * @covers ::getTransactionReference
      */
-    public function testGetTransactionIdFailure()
+    public function testGetTransactionReferenceFailure()
     {
         $response = new RefundResponse($this->request, $this->dataFailure);
 
-        $this->assertNull($response->getTransactionId());
+        $this->assertNull($response->getTransactionReference());
     }
 
     /**

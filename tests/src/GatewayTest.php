@@ -136,9 +136,9 @@ class GatewayTest extends GatewayTestCase
 
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
-        $this->assertSame('1413907284', $response->getTransactionId());
+        $this->assertSame('1413907284', $response->getTransactionReference());
         $this->assertSame('OP000', $response->getCode());
-        $this->assertSame('51697014', $response->getTransactionReference());
+        $this->assertSame('51697014', $response->getTransactionId());
         $this->assertEquals('ApproveTEST', $response->getMessage());
     }
 
@@ -158,9 +158,9 @@ class GatewayTest extends GatewayTestCase
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
-        $this->assertNull($response->getTransactionId());
-        $this->assertSame('OP858', $response->getCode());
         $this->assertNull($response->getTransactionReference());
+        $this->assertSame('OP858', $response->getCode());
+        $this->assertNull($response->getTransactionId());
         $this->assertEquals('customer_email is required (OP858), invalid ipaddress (OP828)', $response->getMessage());
     }
 
@@ -180,7 +180,7 @@ class GatewayTest extends GatewayTestCase
 
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
-        $this->assertSame('1413976984', $response->getTransactionId());
+        $this->assertSame('1413976984', $response->getTransactionReference());
         $this->assertEquals('A', $response->getResponse());
         $this->assertSame('OP000', $response->getCode());
         $this->assertSame('ApproveTEST', $response->getMessage());
@@ -202,7 +202,7 @@ class GatewayTest extends GatewayTestCase
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
-        $this->assertNull($response->getTransactionId());
+        $this->assertNull($response->getTransactionReference());
         $this->assertEquals('E', $response->getResponse());
         $this->assertSame('OP299', $response->getCode());
         $this->assertSame('Invalid order_id', $response->getMessage());
