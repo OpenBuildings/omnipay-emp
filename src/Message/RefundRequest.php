@@ -95,8 +95,8 @@ class RefundRequest extends AbstractRequest
         }
 
         $data['reason'] = $this->getDescription();
-        $data['order_id'] = $this->getTransactionReference();
-        $data['trans_id'] = $this->getTransactionId();
+        $data['order_id'] = $this->getTransactionId();
+        $data['trans_id'] = $this->getTransactionReference();
 
         return $data;
     }

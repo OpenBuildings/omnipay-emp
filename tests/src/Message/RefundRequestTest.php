@@ -85,8 +85,8 @@ class RefundRequestTest extends TestCase
                 )
             ),
             'description' => 'Faulty Product',
-            'transactionReference' => '51711614',
-            'transactionId' => '1413980404',
+            'transactionId' => '51711614',
+            'transactionReference' => '1413980404',
         ));
     }
 
@@ -111,8 +111,8 @@ class RefundRequestTest extends TestCase
                     ),
                     'requestData' => $this->requestData,
                     'description' => 'Faulty Product',
-                    'transactionReference' => '51711614',
-                    'transactionId' => '1413980404',
+                    'transactionId' => '51711614',
+                    'transactionReference' => '1413980404',
                 ),
                 // Expected
                 array(
@@ -136,8 +136,8 @@ class RefundRequestTest extends TestCase
                     'apiKey' => 'key1',
                     'amount' => '200.00',
                     'description' => 'Faulty Product',
-                    'transactionReference' => '51711614',
-                    'transactionId' => '1413980404',
+                    'transactionId' => '51711614',
+                    'transactionReference' => '1413980404',
                 ),
                 // Expected
                 array(
