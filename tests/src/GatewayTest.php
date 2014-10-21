@@ -4,7 +4,7 @@ namespace Omnipay\Emp\Test;
 
 use Omnipay\Tests\GatewayTestCase;
 use Omnipay\Emp\Gateway;
-use Omnipay\Emp\Threatmatrix;
+use Omnipay\Emp\Threatmetrix;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -111,14 +111,14 @@ class GatewayTest extends GatewayTestCase
     }
 
     /**
-     * @covers ::getThreatmatrix
-     * @covers ::setThreatmatrix
+     * @covers ::getThreatmetrix
+     * @covers ::setThreatmetrix
      */
-    public function testThreatmatrix()
+    public function testThreatmetrix()
     {
-        $threatmatrix = new Threatmatrix('asd123', 'asd123');
-        $this->assertSame($this->gateway, $this->gateway->setThreatmatrix($threatmatrix));
-        $this->assertSame($threatmatrix, $this->gateway->getThreatmatrix());
+        $threatmetrix = new Threatmetrix('asd123', 'asd123');
+        $this->assertSame($this->gateway, $this->gateway->setThreatmetrix($threatmetrix));
+        $this->assertSame($threatmetrix, $this->gateway->getThreatmetrix());
     }
 
     /**

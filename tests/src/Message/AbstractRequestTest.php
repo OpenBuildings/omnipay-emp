@@ -4,7 +4,7 @@ namespace Omnipay\Emp\Test\Message;
 
 use Omnipay\Tests\TestCase;
 use Omnipay\Emp\Message\AbstractRequest;
-use Omnipay\Emp\Threatmatrix;
+use Omnipay\Emp\Threatmetrix;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -58,19 +58,19 @@ class AbstractRequestTest extends TestCase
     }
 
     /**
-     * @covers ::getThreatmatrix
-     * @covers ::setThreatmatrix
+     * @covers ::getThreatmetrix
+     * @covers ::setThreatmetrix
      */
-    public function testThreatmatrix()
+    public function testThreatmetrix()
     {
-        $threatmatrix = new Threatmatrix('asd123', 'asd123');
-        $this->assertSame($this->request, $this->request->setThreatmatrix($threatmatrix));
-        $this->assertSame($threatmatrix, $this->request->getThreatmatrix());
+        $threatmetrix = new Threatmetrix('asd123', 'asd123');
+        $this->assertSame($this->request, $this->request->setThreatmetrix($threatmetrix));
+        $this->assertSame($threatmetrix, $this->request->getThreatmetrix());
     }
 
     public function providerGetData()
     {
-        $tmx = $this->getMock('Omnipay\Emp\Threatmatrix', array('getSessionId'), array('sID', 'orgID'));
+        $tmx = $this->getMock('Omnipay\Emp\Threatmetrix', array('getSessionId'), array('sID', 'orgID'));
         $tmx
             ->expects($this->once())
             ->method('getSessionId')
@@ -82,7 +82,7 @@ class AbstractRequestTest extends TestCase
                     'apiKey' => 'some key 1',
                     'clientId' => 'some id 1',
                     'testMode' => true,
-                    'threatmatrix' => $tmx,
+                    'threatmetrix' => $tmx,
                 ),
                 array(
                     'test_transaction' => '1',

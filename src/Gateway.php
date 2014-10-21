@@ -82,19 +82,19 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @return Threatmatrix
+     * @return Threatmetrix
      */
-    public function getThreatmatrix()
+    public function getThreatmetrix()
     {
-        return $this->getParameter('threatmatrix');
+        return $this->getParameter('threatmetrix');
     }
 
     /**
-     * @param Threatmatrix $threatmatrix
+     * @param Threatmetrix $threatmetrix
      */
-    public function setThreatmatrix(Threatmatrix $threatmatrix)
+    public function setThreatmetrix(Threatmetrix $threatmetrix)
     {
-        return $this->setParameter('threatmatrix', $threatmatrix);
+        return $this->setParameter('threatmetrix', $threatmetrix);
     }
 
     /**
