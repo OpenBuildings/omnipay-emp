@@ -23,7 +23,7 @@ class RefundResponse extends AbstractResponse
     /**
      * @return string|null
      */
-    public function getTransactionId()
+    public function getTransactionReference()
     {
         if (isset($this->data['trans_id'])) {
             return $this->data['trans_id'];

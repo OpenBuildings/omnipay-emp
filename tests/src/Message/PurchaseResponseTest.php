@@ -115,7 +115,7 @@ class PurchaseResponseTest extends TestCase
     {
         $response = new PurchaseResponse($this->request, $this->dataSuccess);
 
-        $this->assertEquals('1413980404', $response->getTransactionId());
+        $this->assertEquals('51711614', $response->getTransactionId());
     }
 
     /**
@@ -135,7 +135,7 @@ class PurchaseResponseTest extends TestCase
     {
         $response = new PurchaseResponse($this->request, $this->dataSuccess);
 
-        $this->assertEquals('51711614', $response->getTransactionReference());
+        $this->assertEquals('1413980404', $response->getTransactionReference());
     }
 
     /**
