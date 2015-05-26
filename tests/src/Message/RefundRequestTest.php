@@ -68,6 +68,35 @@ class RefundRequestTest extends TestCase
         ),
     );
 
+    private $requestData2 = array(
+        'order_id' => '143118424',
+        'order_total' => '141.24',
+        'test_transaction' => '1',
+        'order_datetime' => '2015-05-26 09:21:31',
+        'order_status' => 'Paid',
+        'cart' => array(
+            'item' => array(
+                'id' => '143637224',
+                'code' => '4F0R7U',
+                'name' => 'products from vitamin',
+                'description' => array(),
+                'qty' => '1',
+                'digital' => '0',
+                'discount' => '0',
+                'predefined' => '0',
+                'unit_price' => '141.24',
+            )
+        ),
+        'transaction' => array(
+            'type' => 'sale',
+            'response' => 'A',
+            'response_code' => 'OP000',
+            'response_text' => 'ApproveTEST',
+            'trans_id' => '1849280744',
+            'account_id' => '635182',
+        )
+    );
+
     public function setUp()
     {
         parent::setUp();
@@ -172,6 +201,10 @@ class RefundRequestTest extends TestCase
         $this->assertEquals('51931344', $this->request->getRequestDataItem(10));
         $this->assertEquals('51931354', $this->request->getRequestDataItem(12));
         $this->assertEquals('51931364', $this->request->getRequestDataItem(13));
+
+        $this->request->setRequestData($this->requestData2);
+
+        $this->assertEquals('143637224', $this->request->getRequestDataItem('4F0R7U'));
     }
 
     /**
