@@ -44,6 +44,10 @@ class RefundRequest extends AbstractRequest
         if (isset($data['cart']['item'])) {
             $items = $data['cart']['item'];
 
+            if (isset($items['code']) and $items['code'] == $code) {
+                return $items['id'];
+            }
+
             foreach ($items as $item) {
                 if (isset($item['code']) and $item['code'] == $code) {
                     return $item['id'];
