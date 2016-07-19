@@ -8,6 +8,11 @@ php:
   - 7.0
   - hhvm
 
+env:
+  - DEPS=normal
+  - DEPS=highest
+  - DEPS=lowest
+
 matrix:
   allow_failures:
     - php: hhvm
@@ -21,7 +26,9 @@ before_install:
   - composer selfupdate
 
 install:
-  - composer install
+  - if [ "$DEPS" = "normal" ]; then composer install --no-interaction; fi;
+  - if [ "$DEPS" = "highest" ]; then composer update --no-interaction; fi;
+  - if [ "$DEPS" = "lowest" ]; then composer update --no-interaction --prefer-lowest --prefer-stable; fi;
 
 before_script:
   - mkdir -p build/logs
