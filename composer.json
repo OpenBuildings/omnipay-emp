@@ -16,6 +16,9 @@
         "omnipay/tests": "~2.0"
     },
     "autoload": {
-        "psr-4": {"Omnipay\\Emp\\": "src/"}
+        "psr-4": {
+            "Omnipay\\Emp\\": "src/",
+            "Omnipay\\Emp\\Test\\": "tests/src/"
+        }
     }
 }
