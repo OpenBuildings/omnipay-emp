@@ -4,7 +4,14 @@ php:
   - 5.3
   - 5.4
   - 5.5
+  - 5.6
+  - 7.0
   - hhvm
+
+env:
+  - DEPS=normal
+  - DEPS=highest
+  - DEPS=lowest
 
 matrix:
   allow_failures:
@@ -19,13 +26,15 @@ before_install:
   - composer selfupdate
 
 install:
-  - composer install
+  - if [ "$DEPS" = "normal" ]; then composer install --no-interaction; fi;
+  - if [ "$DEPS" = "highest" ]; then composer update --no-interaction; fi;
+  - if [ "$DEPS" = "lowest" ]; then composer update --no-interaction --prefer-lowest --prefer-stable; fi;
 
 before_script:
   - mkdir -p build/logs
 
 script:
-  - phpunit --coverage-clover build/logs/clover.xml
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
   - test -e build/logs/clover.xml && wget https://scrutinizer-ci.com/ocular.phar
